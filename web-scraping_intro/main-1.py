@@ -10,5 +10,5 @@ with open('100-index.html', 'r') as html_file:
     availabilities = soup.find_all('article')
     for available in availabilities:
         places = available.h2.text
-        amount = available.div.text
+        amount = available.div.text.replace(' ','')
         print(f"{places} costs {amount}")
